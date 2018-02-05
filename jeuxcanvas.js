@@ -93,8 +93,8 @@ function drawPaddle() {
 }
 
 function drawBricks() {
-  for(var c=0; c<brickColumnCount; c++) {
-    for(var r=0; r<brickRowCount; r++) {
+  for(c=0; c<brickColumnCount; c++) {
+    for(r=0; r<brickRowCount; r++) {
       var brickX = (c*(brickWidth+brickPadding))+brickOffsetLeft;
       var brickY = (r*(brickHeight+brickPadding))+brickOffsetTop;
       bricks[c][r].x = brickX;
@@ -124,11 +124,11 @@ function dessiner() {
   } else if(y + dy > canvas.height-ballRadius) { // si touche le fond alors
     if(x > paddleX && x < paddleX + paddleWidth) { // centre de balle entre extremite de raquette ok
       if(y= y-paddleHeight){
-          dy = -dy  ;
+          dy = -dy ;
 			 }
     }
     else { // sinon pas ok
-        alert("GAME OVER");
+        // alert("GAME OVER");
         document.location.reload();
     }
   }
@@ -146,4 +146,4 @@ if(rightPressed && paddleX < canvas.width-paddleWidth) {
 
 }
 
-setInterval(dessiner, 15);
+setInterval(dessiner, 10);
